@@ -12,7 +12,7 @@ const Header = () => {
     <div className = "header-container">
       <a href = "#"><div className = "header-element logo"><p>ああ、神聖なる単純さよ</p></div></a>
       <div id = 'btn' className = "header-element search" onClick = {clickHandler}/>
-      <div id = 'fullScreen' className = "header-element fullscreen">
+      <div id = 'fullScreen' className = "header-element fullscreen disable">
         <p>
         <h1>CATEGORY:</h1>
         <span>MOVIE</span>
