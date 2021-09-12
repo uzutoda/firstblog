@@ -1,0 +1,259 @@
+//GoogleFontsの読み込み
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&family=Kaisei+Opti&family=Shippori+Mincho:wght@500;600;700&display=swap');
+//FontAwesomeの読み込み
+@import url('https://use.fontawesome.com/releases/v5.6.1/css/all.css');
+
+:root{
+    --main-color:rgb(59, 59, 59);
+    --sub-color:rgb(185, 111, 111);
+    --text-color:rgb(32,32,32);
+    --background-color:whitesmoke;
+    --main-white:white;
+    --sub-white:whitesmoke;
+
+}
+
+body{
+    margin:0;
+    padding:0;
+    background-color: var(--background-color);
+}
+
+.main-container{
+    margin:24px 96px;
+    border:solid 1px var(--main-color);
+    border-radius: 6px;
+    background-color:var(--main-white);
+    color:black;
+    display:flex;
+    flex-flow:column;
+}
+
+.header-container{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    & a{
+        text-decoration: none;
+    }
+}
+
+.header-element{
+    width:100%;
+    align-items: center;
+    user-select: none;
+    font-size: 1.8rem;
+
+    &.logo{
+        white-space: nowrap;
+        font-family: 'Kaisei Opti', serif;
+        margin:0px 24px;
+        color:var(--main-white);
+        background-color:var(--main-color);
+        text-align:center;
+    }
+
+    &.search{
+        z-index:99;
+        width:6rem;
+        margin-left:auto;
+        text-align:center;
+        line-height:6rem;
+        &::before{
+            font-size:3rem;
+            font-family: "Font Awesome 5 Free";
+            content: '\f0c9';
+            font-weight: 900;
+        }
+        &:hover{
+            color:var(--sub-color);
+            cursor: pointer;
+        }
+        &.close::before{
+            font-size:3rem;
+            font-family: "Font Awesome 5 Free";
+            content: '\f00d';
+            font-weight: 900;
+            color:var(--sub-white);
+        }
+        &.close:hover::before{
+            color:var(--sub-color);
+        }
+    }
+
+    &.fullscreen{
+        display:flex;
+        flex-flow:column;
+        justify-content: center;
+        align-items: flex-start;
+        transition:background-color 0.5s;
+        z-index:98;
+        position:fixed;
+        top:0;
+        left:0;
+        background-color: var(--main-color);
+        opacity:0.8;
+        width:100vw;
+        height:100vh;
+        color:var(--main-white);
+
+        &.disable{
+        visibility: hidden;
+        opacity:0;
+        background-color: transparent;
+        }
+
+        & h1{
+            margin:0;
+            display: inline-block;
+        }
+        & span{
+            display: inline-block;
+            background-color:var(--text-color);
+            padding:0 0.5rem;
+        }
+        & span:hover{
+            display: inline-block;
+            background-color:var(--sub-color);
+        }
+    }
+
+}
+
+.hero-container{
+    position:relative;
+    width:66vw;
+    margin: 0 24px 0 auto;
+    color:black;
+    font-family: 'Shippori Mincho', serif;
+    &:before{
+        content:"";
+        display: block;
+        padding-top: 50%;
+    }
+}
+
+.hero-element{
+    z-index:1;
+    position:absolute;
+    color:rgb(0, 0, 0);
+    top:0;
+    left:0;
+    &.content{
+        padding:0 12px;
+        background-color:var(--sub-color);
+        top:50%;
+        left:-15%;
+    }
+    &.image{
+        z-index:0;
+        position:absolute;
+        width:100%;
+        height:100%;
+        background-image:url(../images/peter-herrmann-4Qsp8fhEnDw-unsplash.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center;
+        filter: grayscale(50%);
+    }
+
+}
+
+.nav-container{
+    background-color: var(--main-color);
+    font-family: 'Kaisei Opti', serif;
+    font-size:1.2rem;
+    color:var(--main-white);
+    justify-content: center;
+    display:flex;
+    margin:24px 0;
+    user-select: none;
+}
+
+.nav-element{
+    &:hover{
+        opacity:0.6;
+        background-color: black;
+        cursor:pointer;
+    }
+    & p{
+        display: block;
+        padding:0 48px;
+    }
+}
+
+.content-container{
+    display:flex;
+}
+
+.maincontent-container{
+    font-family: 'Shippori Mincho', serif;
+    font-size:1.2rem;
+    width:60%;
+    margin:24px;
+
+}
+
+.maincontent-element{
+    border:solid 1px var(--main-color);
+    border-radius: 6px;
+    padding:24px 90px;
+    color:var(--text-color);
+
+    & h1{
+        display: inline-block;
+        font-size:3rem;
+        margin:2rem 1rem 0 2rem;
+    }
+
+    & h2{
+        font-size:1.5em;
+    }
+
+    & img{
+        width:100%;
+    }
+
+    & .date{
+        display:inline-block;
+        margin-right:1rem;
+    }
+
+    & .tag{
+        display:inline-block;
+        background-color: var(--sub-color);
+        color:var(--main-white);
+        padding:0 6px;
+        user-select: none;
+        cursor:pointer;
+    }
+}
+
+.subcontent-container{
+    font-family: 'Shippori Mincho', serif;
+    font-size:1rem;
+    width:30%;
+    margin:24px;
+    padding:12px 45px;
+}
+
+.subcontent-element{
+    border:solid 1px var(--main-color);
+    margin:12px 0;
+    padding:12px 36px;
+    border-radius: 6px;
+
+    color:var(--text-color);
+    & h1{
+        display: inline-block;
+        font-size:1.2rem;
+        margin:1rem 0 0 0;
+        &:before{
+            content:"・"
+        }
+    }
+
+    & h2{
+        font-size:1rem;
+    }
+}
